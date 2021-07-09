@@ -1,0 +1,6 @@
+<div class="col-12 col-lg-6">
+  <div data-hook="admin_shipping_method_form_store_field" class="form-group">
+    <%= label_tag :shipping_method_stores, Spree.t(:stores) %>
+    <%= collection_select(:shipping_method, :store_ids, @stores, :id, :unique_name, {}, { multiple: true, class: 'select2' }) %>
+  </div>
+</div>

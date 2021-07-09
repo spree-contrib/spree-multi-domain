@@ -1,4 +1,4 @@
-module Spree
+module SpreeMultiDomain
   module ProductDecorator
     def self.prepended(base)
       base.has_many :store_products, class_name: 'Spree::StoreProduct', dependent: :destroy
@@ -9,4 +9,4 @@ module Spree
   end
 end
 
-::Spree::Product.prepend(Spree::ProductDecorator)
+::Spree::Product.prepend(SpreeMultiDomain::ProductDecorator)

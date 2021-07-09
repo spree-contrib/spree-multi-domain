@@ -1,4 +1,4 @@
-module Spree
+module SpreeMultiDomain
   module TaxonomyDecorator
     def self.prepended(base)
       base.belongs_to :store
@@ -8,4 +8,4 @@ module Spree
   end
 end
 
-::Spree::Taxonomy.prepend(Spree::TaxonomyDecorator)
+::Spree::Taxonomy.prepend(SpreeMultiDomain::TaxonomyDecorator)

@@ -1,4 +1,4 @@
-module Spree
+module SpreeMultiDomain
   module TaxonDecorator
     def self.prepended(base)
       base.scope :by_store, ->(store_id) { joins(:taxonomy).merge(Spree::Taxonomy.by_store(store_id)) }
@@ -13,4 +13,4 @@ module Spree
   end
 end
 
-::Spree::Taxon.prepend(Spree::TaxonDecorator)
+::Spree::Taxon.prepend(SpreeMultiDomain::TaxonDecorator)

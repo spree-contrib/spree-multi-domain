@@ -10,7 +10,7 @@ module SpreeMultiDomain
     def self.activate
       %w[app lib].each do |dir|
         Dir.glob(File.join(File.dirname(__FILE__), "../../#{dir}/**/*_decorator*.rb")).sort.each do |c|
-          Rails.application.config.cache_classes ? require(c) : load(c)
+          require_dependency(c)
         end
       end
 
